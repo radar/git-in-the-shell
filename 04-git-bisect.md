@@ -73,3 +73,19 @@ Date:   Mon Jan 23 10:01:00 2017 +1100
     trouble
 ```
 
+We can speed up this whole process if we create a small shell script to run these verification steps:
+
+```
+grep -q 'This text' 01-git-add-patch.md
+
+if [ $? -eq 0 ]; then
+  exit 1
+else
+  exit 0
+fi
+```
+
+And then we use `git bisect run ./test.sh`:
+
+```
+
