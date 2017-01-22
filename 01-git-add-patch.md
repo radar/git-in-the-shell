@@ -1,5 +1,7 @@
 `git add -p` will allow you to add individual hunks (pieces) of files, rather than the entire file. It is especially helpful if you have several unrelated changes to the same file which you want to commit sepearately.
 
+This text shouldn't be here.
+
 When you `git add -p` you'll be presented with an interface like this:
 
 ```diff
