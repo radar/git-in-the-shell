@@ -1,0 +1,1 @@
+`git add -p` will allow you to add individual chunks of files, rather than the entire file. It is especially helpful if you have several unrelated changes to the same file which you want to commit sepearately.
