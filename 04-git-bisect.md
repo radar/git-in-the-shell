@@ -88,4 +88,22 @@ fi
 And then we use `git bisect run ./test.sh`:
 
 ```
+running ./test.sh
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[6311d2a783a552366093a9154522ebadca550e9e] Add git checkout patch
+running ./test.sh
+2d02040fa83e02545d6479eac1d0dedb265f9100 is the first bad commit
+commit 2d02040fa83e02545d6479eac1d0dedb265f9100
+Author: Ryan Bigg <git@ryanbigg.com>
+Date:   Mon Jan 23 10:01:00 2017 +1100
+
+    trouble
+
+:100644 100644 8b6d5a4ad495d23d8b9c048c15d7f86a57ba485c 17e58bc6a5984f163c475acfa181ca196282e939 M  01-git-add-patch.md
+bisect run success
+```
+
+We can see here that `git bisect` has run `./test.sh` twice. `git bisect` is using the exit status of my little shell script to determine if a commit is "good" or "bad". If the shell script exits with a status of 0, then the commit is "good", otherwise the commit is "bad".
+
+
 
