@@ -2,7 +2,7 @@
 
 ## Soft
 
-The `--soft` mode will reset the repository back to the specified commit:
+`git reset --soft <ref>` will reset the repository back to the specified commit:
 
 ```
 git reset --soft HEAD~1
@@ -34,3 +34,5 @@ Changes not staged for commit:
 ```
 
 ## Hard
+
+The `git reset --hard <ref>` variant of this command will reset the repository back to that specific commit.
