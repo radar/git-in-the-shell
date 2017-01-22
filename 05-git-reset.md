@@ -35,4 +35,32 @@ Changes not staged for commit:
 
 ## Hard
 
-The `git reset --hard <ref>` variant of this command will reset the repository back to that specific commit.
+The `git reset --hard <ref>` variant of this command will reset the repository back to that specific commit:
+
+```
+git reset --hard HEAD~1
+```
+
+**This will lose _all current changes_ to files, so be careful when you do run it!**
+
+If you didn't mean to run `git reset --hard HEAD~1`, you can reset the repo back to the previous commit again, if you know the commit's ref. If you didn't write that ref down, then `reflog` will come in handy:
+
+```
+git reflog
+```
+
+```
+5852c8d HEAD@{0}: reset: moving to HEAD~1
+3d5f58c HEAD@{1}: commit: hard documentation
+5852c8d HEAD@{2}: commit (amend): Soft documentation
+```
+
+In this output, we can see that `3d5f58c` was the commit we were on before we ran `git reset --hard HEAD~1`. When we ran that command, we can then see that our repo moved back to `5852c8d`, which was the commit prior to `3d5f58c`. We can undo our mistaken run of `git reset --hard` by running it again and specifying the commit we want to move to:
+
+```
+git reset --hard 3d5f58c
+```
+
+The repo's state will now be reset back to where it was before.
+
+
