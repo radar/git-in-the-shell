@@ -53,7 +53,7 @@ Closing my editor's window now will cause `git rebase` to run. We'll see that co
  1 file changed, 35 insertions(+)
 ```
 
-If I now do `git log --online --reverse` I can see this new commit in the history:
+If I now do `git log --oneline --reverse` I can see this new commit in the history:
 
 ```
 c10be43 git add patch placeholder
